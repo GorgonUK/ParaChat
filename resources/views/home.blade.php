@@ -59,5 +59,37 @@
     <script src="{{asset('js/chat-options.js')}}"></script>
     <script src="{{asset('js/chat-toggler.js')}}"></script>
     <script src="{{asset('js/smoothScroll.js')}}"></script>
+    <script> 
+$('#sc').click(function() {
+
+
+var username = $('#username').val();
+
+if (username.length > 0){
+let f = new FormData();
+f.append('username', username);
+    fetch("{{ route('ajaxRequest.post') }}", {
+        method: "POST",
+        body: f,
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }, 
+    }).then((res) => res.json())
+    .then(res => {
+       //if response 200 success
+        console.log(res);
+        window.location="/chat";
+    }).catch(err=>console.log(err))
+    
+  }
+
+  else{
+      return false;
+  }
+}
+);
+
+
+    </script>
 </body>
 </html>

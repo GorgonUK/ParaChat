@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HomeController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +20,8 @@ Route::get('/', function () {
 Route::get('/chat', function () {
     return view('chat');
 });
-Route::get('ajaxRequest', 'HomeController@ajaxRequest');
-Route::post('ajaxRequest', 'HomeController@ajaxRequestPost')->name('ajaxRequest.post'); 
+Route::get('ajaxRequest', [HomeController::class, 'ajaxRequest']);
+Route::post('ajaxRequest', 'App\Http\Controllers\HomeController@ajaxRequestPost')->name('ajaxRequest.post');
+// Route::post('ajaxRequest', [HomeController::class, 'ajaxRequest']);
+
+

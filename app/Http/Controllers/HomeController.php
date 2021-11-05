@@ -1,8 +1,11 @@
 <?php
  
 namespace App\Http\Controllers;
+
+use App\Models\User;
 use Illuminate\Http\Request;
- 
+use Illuminate\Support\Facades\Log;
+
 class HomeController extends Controller
 {
     /**
@@ -24,7 +27,8 @@ class HomeController extends Controller
     public function ajaxRequestPost(Request $request)
     {
         $input = $request->all();
-        \Log::info($input);
+        $username = $input["username"];
+        User::create(["name"=>$username]);
  
         return response()->json(['success'=>'Got Simple Ajax Request.']);
     }
