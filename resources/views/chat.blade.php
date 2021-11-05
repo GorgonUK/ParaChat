@@ -3,18 +3,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
-
-        <title>Laravel</title>
+		<meta name="csrf-token" content="{{ csrf_token() }}" />
+        <title>Para Chat</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre&amp;display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
-        <link rel="stylesheet" href="../resources/css/chat.compiled.css">
-        <link rel="stylesheet" href="../resources/css/Footer-Basic.css">
-        <link rel="stylesheet" href="../resources/css/styles.css">
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/chat.compiled.css')}}">
+        <link rel="stylesheet" href="{{asset('css/Footer-Basic.css')}}">
+        <link rel="stylesheet" href="{{asset('css/styles.css')}}">
         
         <!-- Styles -->
         <style>
@@ -38,7 +38,7 @@
         <div class="row text-center d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" style="/*margin-top: 149px;*/">
             <div class="col">
                 <div></div><img style="text-align: center;width:100px;" src="/assets/img/google-stadia-logo-hd4.png">
-                <h1 style="color: rgb(255,255,255);text-align: center;margin-top: 0px;">Welcome to LaraChat</h1>
+                <h1 style="color: rgb(255,255,255);text-align: center;margin-top: 0px;">Welcome to ParaChat</h1>
             </div>
         </div>
         <div class="row">
@@ -128,10 +128,10 @@
             </ul>
         </footer>
     </div>
-    <script src="../resources/js/jquery.min.js"></script>
-    <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../resources/js/chat-options.js"></script>
-    <script src="../resources/js/chat-toggler.js"></script>
-    <script src="../resources/js/smoothScroll.js"></script>
+	<script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min')}}"></script>
+    <script src="{{asset('js/chat-options.js')}}"></script>
+    <script src="{{asset('js/chat-toggler.js')}}"></script>
+    <script src="{{asset('js/smoothScroll.js')}}"></script>
 </body>
 </html>

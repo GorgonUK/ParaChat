@@ -12,7 +12,7 @@ window.scrollBy({
 });
 
 // Scroll to a certain element
-document.querySelector('#sc').scrollIntoView({ 
+document.querySelector('.hello').scrollIntoView({ 
   behavior: 'smooth' 
 });
 
