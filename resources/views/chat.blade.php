@@ -36,10 +36,6 @@
     </div>
     <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex flex-column justify-content-center flex-sm-column justify-content-sm-center flex-md-column justify-content-md-center flex-lg-column justify-content-lg-center flex-xl-column flex-xxl-column" style="height: 100%;width: 100%;">
         <div class="row text-center d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" style="/*margin-top: 149px;*/">
-            <div class="col">
-                <div></div><img style="text-align: center;width:100px;" src="/assets/img/google-stadia-logo-hd4.png">
-                <h1 style="color: rgb(255,255,255);text-align: center;margin-top: 0px;">Welcome to ParaChat</h1>
-            </div>
         </div>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-start justify-content-sm-center justify-content-md-start justify-content-lg-start justify-content-xl-center justify-content-xxl-center" style="padding: 7px;padding-right: 0px;padding-top: 52px;"><div class="scroller"></div>
@@ -118,7 +114,7 @@
 			</figure>
 		</div>
 	</section>
-</main><input type="text" id="username" style="background: #380036;border-color: #ff4b1e;box-shadow: 0px 0px 0px 1px #ff4b1e, 0px 0px 0px 5px rgb(154,0,100);border-radius: 32px;text-align: left;color: #fff;font-size: 21px;position: fixed;/*bottom: 25%;*//*margin-left: auto;*//*margin-right: auto;*/height: 47px;left: 50%;bottom: 20%;transform: translateY(50%) translateX(-50%);width: 51vh;padding-left: 18px;" placeholder="Write message" onclick="showinput()"></div>
+</main><input type="text" id="username" style="background: #380036;border-color: #ff4b1e;box-shadow: 0px 0px 0px 1px #ff4b1e, 0px 0px 0px 5px rgb(154,0,100);border-radius: 32px;text-align: left;color: #fff;font-size: 21px;position: fixed;/*bottom: 25%;*//*margin-left: auto;*//*margin-right: auto;*/height: 47px;left: 50%;bottom: 20%;transform: translateY(50%) translateX(-50%);width: 42vh;padding-left: 18px;" placeholder="Write message" onclick="showinput()"></div>
         </div>
         <footer class="d-flex justify-content-around footer-basic" style="height: 87.667px;position: fixed;bottom: 0%;left: 0%;">
             <ul class="list-inline text-center d-flex justify-content-md-center">
@@ -133,5 +129,7 @@
     <script src="{{asset('js/chat-options.js')}}"></script>
     <script src="{{asset('js/chat-toggler.js')}}"></script>
     <script src="{{asset('js/smoothScroll.js')}}"></script>
+
+	<script>//Pusher listener</script>
 </body>
 </html>

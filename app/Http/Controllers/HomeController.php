@@ -14,10 +14,6 @@ class HomeController extends Controller
 *
      * @return void
      */
-    public function ajaxRequest()
-    {
-        return view('ajaxRequest');
-    }
  
     /**
      * Create a new controller instance.
@@ -26,10 +22,11 @@ class HomeController extends Controller
      */
     public function ajaxRequestPost(Request $request)
     {
+        // if(!$_SESSION["hasUsername"])
         $input = $request->all();
         $username = $input["username"];
         User::create(["name"=>$username]);
- 
+        $request->session()->put('hasUsername', true);
         return response()->json(['success'=>'Got Simple Ajax Request.']);
     }
  

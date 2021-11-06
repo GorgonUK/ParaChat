@@ -68,7 +68,7 @@ var username = $('#username').val();
 if (username.length > 0){
 let f = new FormData();
 f.append('username', username);
-    fetch("{{ route('ajaxRequest.post') }}", {
+    fetch("{{ route('ajaxRequest') }}", {
         method: "POST",
         body: f,
         headers: {
@@ -78,7 +78,7 @@ f.append('username', username);
     .then(res => {
        //if response 200 success
         console.log(res);
-        window.location="/chat";
+        window.location="./chat";
     }).catch(err=>console.log(err))
     
   }
