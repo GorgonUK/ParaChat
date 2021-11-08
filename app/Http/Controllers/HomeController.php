@@ -20,7 +20,11 @@ class HomeController extends Controller
      *
      * @return void
      */
+    public function show(Request $request, $id)
+    {
+        $value = $request->session()->get('key');
 
+    }
     public function ajaxRequestPost(Request $request)
     {
         // if(!$_SESSION["hasUsername"])
@@ -28,16 +32,9 @@ class HomeController extends Controller
         $username = $input["username"];
        
         $user_agent = request()->server('HTTP_USER_AGENT');
-        User::create(["name"=>$username,"user_agent"=>$user_agent]);
+        User::create(["name"=>$username,"user_agent"=>$user_agent,"session",session_id()]);
         $request->session()->put('hasUsername', true);
-        return response()->json(['success'=>'Got Simple Ajax Request.']);
+        return response()->json(['success'=>'User logged in']);
     }
-    public function show(Request $request, $id)
-    {
-        $value = $request->session()->get('key', 'default');
-
-        $value = $request->session()->get('key', function () {
-            return 'default';
-        });
-    }
+ 
 } 

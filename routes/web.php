@@ -19,13 +19,6 @@ use App\Events\ChatTrigger;
 
 Route::get('/', function () {
 
-        // Retrieve a piece of data from the session...
-        $value = session('key');
-
-        // Specifying a default value...
-        $value = session('key', 'default');
-    
-        // Store a piece of data in the session...
         session(['key' => 'value']);
 
     return view('home');
@@ -34,6 +27,7 @@ Route::get('/', function () {
 Route::get('/chat', function () {
     //dd($request);
     if (session("hasUsername")) {
+        
         return view('chat');
     }
     return redirect()->back();
@@ -45,7 +39,6 @@ Route::post('ajaxRequest', 'App\Http\Controllers\HomeController@ajaxRequestPost'
 
 Route::post('/send-message', function (Request $request) {
     event(new ChatTrigger(
-        $request->input('username'),
         $request->input('message')
     ));
 });

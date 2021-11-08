@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Events;
-
+use App\User;
+use App\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -17,14 +18,14 @@ class ChatTrigger implements ShouldBroadcast
   public $message;
 
 
-  public function __construct($username,$message)
+  public function __construct($message)
   {
-      $this->username = $username;
       $this->message = $message;
   }
 
   public function broadcastOn()
   {
+      //return new Channel('chat');
       return new Channel('chat');
   }
 

@@ -498,11 +498,9 @@
 								<p>Leave a like if you like this pen! xD</p>
 							</figure>
 						</div>
-						<?php
+					
 
-						use App\Events\ChatTrigger;
-
-						event(new ChatTrigger('hello world','s')); ?>
+				
 					</section>
 				</main><input type="text" id="message" style="background: #380036;border-color: #ff4b1e;box-shadow: 0px 0px 0px 1px #ff4b1e, 0px 0px 0px 5px rgb(154,0,100);border-radius: 32px;text-align: left;color: #fff;font-size: 21px;position: fixed;/*bottom: 25%;*//*margin-left: auto;*//*margin-right: auto;*/height: 47px;left: 50%;bottom: 20%;transform: translateY(50%) translateX(-50%);width: 42vh;padding-left: 18px;" placeholder="Write message">
 			</div>
@@ -517,14 +515,27 @@
 	</div>
 	<script src="{{asset('js/jquery.min.js')}}"></script>
 	<script>
+		var messages_el = $('#message');
+
 		$(document).ready(function() {
+			
 			$('#message').on('keypress', function(e) {
 				if (e.key === 'Enter' && (e.which == 13)) {
-					console.log("key pressed");
-					channel.trigger("client-message",{data:$('#message').val()})
-					$('#message').val('');
+					var msg = $('#message').val();
+					if (msg == '') {
+						alert("Please enter a message")
+					} else {
+						console.log("key pressed");
+						let channel = pusher.subscribe('chat');
+							channel.trigger("client-message", {
+								data: msg
+							})
+						
+						$('#message').val('');
+					}
 				}
 			});
+
 
 			// Enable pusher logging - don't include this in production
 			Pusher.logToConsole = true;
@@ -538,12 +549,12 @@
 				alert(JSON.stringify(data));
 			});
 
-			
+
 		});
 	</script>
 
 
-<script src="{{asset('js/app.js')}}"></script>
+	<script src="{{asset('js/app.js')}}"></script>
 	<script src="{{asset('js/bootstrap.min')}}"></script>
 	<script src="{{asset('js/chat-options.js')}}"></script>
 	<script src="{{asset('js/chat-toggler.js')}}"></script>

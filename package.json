@@ -14,6 +14,12 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
-        "pusher-js": "^7.0.3"
+        "pusher-js": "^7.0.3",
+        "pusher-js-mock": "^0.3.8"
+    },
+    "dependencies": {
+        "laravel-echo": "^1.11.3",
+        "vue": "^2.6.14",
+        "vue-axios": "^3.4.0"
     }
 }
